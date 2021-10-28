@@ -11,7 +11,7 @@ doc = BeautifulSoup(result.text,'html.parser')
 url_list = doc.select('ul.list_news2 a.link_txt')
 print(len(url_list))
 for i, url in enumerate(url_list):
-    print('## NEWS -> {}번 #########################################')
+    print('## NEWS -> {}번 #########################################'.format(i+1))
     new_url = url['href']
     print('URL: {}'.format(new_url))
     result = requests.get(new_url)
